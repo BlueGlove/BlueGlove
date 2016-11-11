@@ -1,13 +1,20 @@
 # BlueGlove
 
+# About
+BlueGlove is a service that provides brick-and-mortar stores with data and tools to engage and reward their loyal customers.
+When a customer using this app walks into participating store (equipped with an iBeacon), the app will send data about that customer being at the store to a datastore via a server. Later, the store owner can use this app to view information about all of her customers, what they've purchased, how often they've been at the store, and for how long. Then, the store owner can define cohorts of users and send coupons to get them to come into the store. This service both rewards customers for their loyalty and provide store owners with valuable marketing data.
+
 Time spent: **X** hours spent in total
 
-## User Stories
+## User Stories (required)
+[ ] Consumer with app walks into a store, the right info is sent to the servers (assuming app already install on consumer's phone)
+[ ] Provider can see a list of all consumers, when/how often they visited and their transcation history
+[ ] Consumer shows QR code (retrieve from server), Provider can scan the QA code and provide a service/discount for the Consumer
 
-- [ ] Requirement
-   - [ ] Dragging anywhere in the view should reveal the menu.
-   - [ ] The menu should include links to your profile, the home timeline, and the mentions view.
-   - [ ] The menu can look similar to the example or feel free to take liberty with the UI.
+*Optional*
+[ ] Provider can define cohorts of her Consumers
+[ ] Provider can send coupons to those cohorts and show as notification
+
 
 ## Video Walkthrough
 
