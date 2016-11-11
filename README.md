@@ -7,13 +7,13 @@ When a customer using this app walks into participating store (equipped with an 
 Time spent: **X** hours spent in total
 
 ## User Stories (required)
-[ ] Consumer with app walks into a store, the right info is sent to the servers (assuming app already install on consumer's phone)
-[ ] Provider can see a list of all consumers, when/how often they visited and their transcation history
-[ ] Consumer shows QR code (retrieve from server), Provider can scan the QA code and provide a service/discount for the Consumer
+- [ ] Consumer with app walks into a store, the right info is sent to the servers (assuming app already install on consumer's phone)
+- [ ] Provider can see a list of all consumers, when/how often they visited and their transcation history
+- [ ] Consumer shows QR code (retrieve from server), Provider can scan the QA code and provide a service/discount for the Consumer
 
 *Optional*
-[ ] Provider can define cohorts of her Consumers
-[ ] Provider can send coupons to those cohorts and show as notification
+- [ ] Provider can define cohorts of her Consumers
+- [ ] Provider can send coupons to those cohorts and show as notification
 
 
 ## Video Walkthrough
