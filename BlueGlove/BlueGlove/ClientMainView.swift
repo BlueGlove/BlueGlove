@@ -12,6 +12,18 @@ class ClientMainView: UIView {
 
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var QRImageView: UIImageView!
+    @IBOutlet weak var mainMessageLabel: UILabel!
+    
+    
+    var QRImage: UIImage? {
+            get { return QRImageView.image }
+            set { QRImageView.image = newValue }
+    }
+    var mainMessage: String? {
+        get { return mainMessageLabel.text }
+        set { mainMessageLabel.text = newValue }
+    }
+
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
