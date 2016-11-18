@@ -14,6 +14,7 @@
 		29EE6F5B1DD42A2300231D46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29EE6F591DD42A2300231D46 /* Main.storyboard */; };
 		29EE6F5D1DD42A2300231D46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29EE6F5C1DD42A2300231D46 /* Assets.xcassets */; };
 		29EE6F601DD42A2300231D46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29EE6F5E1DD42A2300231D46 /* LaunchScreen.storyboard */; };
+		BD6EF959B1762ADA5277737B /* Pods_BlueGlove.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347A05ED53F7EA720D87492E /* Pods_BlueGlove.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,9 @@
 		29EE6F5C1DD42A2300231D46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29EE6F5F1DD42A2300231D46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29EE6F611DD42A2300231D46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		347A05ED53F7EA720D87492E /* Pods_BlueGlove.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlueGlove.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		96688AAC29D279AB368F43B4 /* Pods-BlueGlove.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueGlove.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlueGlove/Pods-BlueGlove.release.xcconfig"; sourceTree = "<group>"; };
+		B1A046C27B576EC3CE707F1E /* Pods-BlueGlove.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueGlove.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlueGlove/Pods-BlueGlove.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD6EF959B1762ADA5277737B /* Pods_BlueGlove.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +66,8 @@
 			children = (
 				29EE6F541DD42A2300231D46 /* BlueGlove */,
 				29EE6F531DD42A2300231D46 /* Products */,
+				FA624F274B22E01F52A56232 /* Pods */,
+				8B65465541B2EBA9C2407EEF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +93,23 @@
 			path = BlueGlove;
 			sourceTree = "<group>";
 		};
+		8B65465541B2EBA9C2407EEF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				347A05ED53F7EA720D87492E /* Pods_BlueGlove.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA624F274B22E01F52A56232 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B1A046C27B576EC3CE707F1E /* Pods-BlueGlove.debug.xcconfig */,
+				96688AAC29D279AB368F43B4 /* Pods-BlueGlove.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -93,9 +117,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 29EE6F641DD42A2300231D46 /* Build configuration list for PBXNativeTarget "BlueGlove" */;
 			buildPhases = (
+				946B7173F63AAC8A86D80BC3 /* [CP] Check Pods Manifest.lock */,
 				29EE6F4E1DD42A2300231D46 /* Sources */,
 				29EE6F4F1DD42A2300231D46 /* Frameworks */,
 				29EE6F501DD42A2300231D46 /* Resources */,
+				9849E04069A4304CCE1AA969 /* [CP] Embed Pods Frameworks */,
+				032D652D7EC3993A283DE5EE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -153,6 +180,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		032D652D7EC3993A283DE5EE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlueGlove/Pods-BlueGlove-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		946B7173F63AAC8A86D80BC3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9849E04069A4304CCE1AA969 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BlueGlove/Pods-BlueGlove-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		29EE6F4E1DD42A2300231D46 /* Sources */ = {
@@ -280,6 +355,7 @@
 		};
 		29EE6F651DD42A2300231D46 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1A046C27B576EC3CE707F1E /* Pods-BlueGlove.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BlueGlove/Info.plist;
@@ -292,6 +368,7 @@
 		};
 		29EE6F661DD42A2300231D46 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96688AAC29D279AB368F43B4 /* Pods-BlueGlove.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BlueGlove/Info.plist;

@@ -1,0 +1,6 @@
+framework module Pods_BlueGlove {
+  umbrella header "Pods-BlueGlove-umbrella.h"
+
+  export *
+  module * { export * }
+}
