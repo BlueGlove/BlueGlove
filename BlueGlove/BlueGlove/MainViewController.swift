@@ -10,9 +10,14 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    @IBOutlet weak var clientView: ClientMainView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        clientView.QRImage = UIImage(named: "QR_Image_20161110_black")
+        clientView.mainMessage = "New message!"
     }
 
     override func didReceiveMemoryWarning() {
