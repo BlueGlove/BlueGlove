@@ -18,6 +18,9 @@ class MainViewController: UIViewController {
         
         clientView.QRImage = UIImage(named: "QR_Image_20161110_black")
         clientView.mainBeacon = BluBeaconInfo.sharedInstance
+        
+        let bluClient = BluClient()
+        bluClient.addVisit()
     }
 
     override func didReceiveMemoryWarning() {

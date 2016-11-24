@@ -7,16 +7,17 @@
 //
 
 import Foundation
+import AFNetworking
 import BDBOAuth1Manager
 
 
-class BluClient:BDBOAuth1RequestOperationManager{
+class BluClient{
     
     let serverURL = URL(string: "https://blueglove.herokuapp.com/")
     
     func addVisit(){
     
-    var request = URLRequest(url: serverURL!)
+    var request = URLRequest(url: serverURL!.appendingPathComponent("consumer/new") )
     request.httpMethod = "POST"
     let postString = "name=PhillipXcode"
     request.httpBody = postString.data(using: .utf8)
