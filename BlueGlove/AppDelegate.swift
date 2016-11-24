@@ -9,14 +9,53 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate {
 
     var window: UIWindow?
 
+    //Estimote: Add a property to hold the beacon manager and instantiate it
+    //let beaconManager = ESTBeaconManager()
+    let beaconManager = BluBeaconManager()
+    /*let beaconRegion01 = BluBeaconInfo( proximityUUID:
+        UUID(uuidString: "8228DD1A-D9C4-4E98-96CC-559A4EF91AFD")!
+        , major: 2016
+        , minor: 1
+        , identifier: "ice") */
+    let beaconRegion01 = BluBeaconInfo.sharedInstance
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //*** Estimote ***
+        //Set the beacon manager's delegate
+        self.beaconManager.delegate = self
+        //Request User to allow it to run in the background
+        self.beaconManager.requestAlwaysAuthorization()
+        //Request generate notification
+        UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: .alert, categories: nil) )
+        
+
+       self.beaconManager.startMonitoring(for:
+            beaconRegion01
+        )
+        
+     
+        
         return true
+    }
+    
+
+    
+    func beaconManager(_ manager: Any, didEnter region: CLBeaconRegion) {
+        let notification = UILocalNotification()
+            notification.alertBody =
+            "Your gate closes in 47 minutes. " +
+            "Current security wait time is 15 minutes, " +
+            "and it's a 5 minute walk from security to the gate. " +
+        "Looks like you've got plenty of time!"
+
+        UIApplication.shared.presentLocalNotificationNow(notification)
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -39,8 +78,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        
+        beaconManager.stopMonitoring(for: beaconRegion01)
+        
     }
-
 
 }
 

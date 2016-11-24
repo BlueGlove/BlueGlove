@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         clientView.QRImage = UIImage(named: "QR_Image_20161110_black")
-        clientView.mainMessage = "New message!"
+        clientView.mainBeacon = BluBeaconInfo.sharedInstance
     }
 
     override func didReceiveMemoryWarning() {

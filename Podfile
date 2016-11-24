@@ -8,4 +8,5 @@ target 'BlueGlove' do
   # Pods for BlueGlove
   pod 'AFNetworking', '3.0.0'
   pod 'EstimoteSDK', '~> 4.11'
+  pod 'BDBOAuth1Manager' 
 end

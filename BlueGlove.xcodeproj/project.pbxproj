@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2907E4D61DE6925E00ABD57D /* BluBeaconInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2907E4D51DE6925E00ABD57D /* BluBeaconInfo.swift */; };
+		2907E4D81DE694AE00ABD57D /* BluBeaconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2907E4D71DE694AE00ABD57D /* BluBeaconManager.swift */; };
+		2907E4DA1DE6A17300ABD57D /* BluClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2907E4D91DE6A17300ABD57D /* BluClient.swift */; };
 		29D1C24C1DDC2E0900C0D7C9 /* ClientMainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29D1C24B1DDC2E0900C0D7C9 /* ClientMainView.xib */; };
 		29D1C2511DDC333E00C0D7C9 /* ClientMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D1C2501DDC333E00C0D7C9 /* ClientMainView.swift */; };
 		29EE6F561DD42A2300231D46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EE6F551DD42A2300231D46 /* AppDelegate.swift */; };
@@ -18,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2907E4D51DE6925E00ABD57D /* BluBeaconInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluBeaconInfo.swift; sourceTree = "<group>"; };
+		2907E4D71DE694AE00ABD57D /* BluBeaconManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluBeaconManager.swift; sourceTree = "<group>"; };
+		2907E4D91DE6A17300ABD57D /* BluClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluClient.swift; sourceTree = "<group>"; };
+		293913991DDEC96200039C6B /* ObjCBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCBridge.h; sourceTree = "<group>"; };
 		29D1C24B1DDC2E0900C0D7C9 /* ClientMainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClientMainView.xib; sourceTree = "<group>"; };
 		29D1C2501DDC333E00C0D7C9 /* ClientMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientMainView.swift; sourceTree = "<group>"; };
 		29EE6F521DD42A2300231D46 /* BlueGlove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlueGlove.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +51,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		293913981DDEC8D100039C6B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				293913991DDEC96200039C6B /* ObjCBridge.h */,
+				2907E4D91DE6A17300ABD57D /* BluClient.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		2939139A1DDED0D600039C6B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2907E4D51DE6925E00ABD57D /* BluBeaconInfo.swift */,
+				2907E4D71DE694AE00ABD57D /* BluBeaconManager.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		29D1C24A1DDC229600C0D7C9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +107,8 @@
 		29EE6F541DD42A2300231D46 /* BlueGlove */ = {
 			isa = PBXGroup;
 			children = (
+				293913981DDEC8D100039C6B /* API */,
+				2939139A1DDED0D600039C6B /* Model */,
 				29D1C24D1DDC2E0F00C0D7C9 /* View */,
 				29D1C24A1DDC229600C0D7C9 /* Controller */,
 				29EE6F551DD42A2300231D46 /* AppDelegate.swift */,
@@ -145,6 +172,7 @@
 				TargetAttributes = {
 					29EE6F511DD42A2300231D46 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = AXLH29TX9R;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -235,7 +263,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				29EE6F581DD42A2300231D46 /* MainViewController.swift in Sources */,
+				2907E4D61DE6925E00ABD57D /* BluBeaconInfo.swift in Sources */,
+				2907E4D81DE694AE00ABD57D /* BluBeaconManager.swift in Sources */,
 				29D1C2511DDC333E00C0D7C9 /* ClientMainView.swift in Sources */,
+				2907E4DA1DE6A17300ABD57D /* BluClient.swift in Sources */,
 				29EE6F561DD42A2300231D46 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,10 +389,16 @@
 			baseConfigurationReference = B1A046C27B576EC3CE707F1E /* Pods-BlueGlove.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = AXLH29TX9R;
 				INFOPLIST_FILE = BlueGlove/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.BlueGlove;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fortunebamboo.BlueGlove;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/ObjCBridge.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -371,10 +408,14 @@
 			baseConfigurationReference = 96688AAC29D279AB368F43B4 /* Pods-BlueGlove.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = AXLH29TX9R;
 				INFOPLIST_FILE = BlueGlove/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.codepath.BlueGlove;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fortunebamboo.BlueGlove;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${PROJECT_NAME}/ObjCBridge.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

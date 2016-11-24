@@ -12,16 +12,23 @@ class ClientMainView: UIView {
 
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var QRImageView: UIImageView!
-    @IBOutlet weak var mainMessageLabel: UILabel!
+
+    @IBOutlet weak var beaconUUIDLabel: UILabel!
+    @IBOutlet weak var beaconMajorLabel: UILabel!
+    @IBOutlet weak var beaconMinorLabel: UILabel!
     
     
     var QRImage: UIImage? {
             get { return QRImageView.image }
             set { QRImageView.image = newValue }
     }
-    var mainMessage: String? {
-        get { return mainMessageLabel.text }
-        set { mainMessageLabel.text = newValue }
+    var mainBeacon: BluBeaconInfo? {
+        get { return self.mainBeacon }
+        set {
+            beaconUUIDLabel.text = newValue?.proximityUUID.description
+            beaconMajorLabel.text = newValue?.major?.description(withLocale: nil)
+            beaconMinorLabel.text = newValue?.minor?.description(withLocale: nil)
+        }
     }
 
     /*
