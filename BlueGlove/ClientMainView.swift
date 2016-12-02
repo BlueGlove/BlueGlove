@@ -24,12 +24,14 @@ class ClientMainView: UIView {
             get { return QRImageView.image }
             set { QRImageView.image = newValue }
     }
-    var mainBeacon: BluBeaconInfo? {
-        get { return self.mainBeacon }
+    var beaconManager: BluBeaconManager? {
+        get { return self.beaconManager }
         set {
-            beaconUUIDLabel.text = newValue?.proximityUUID.description
-            beaconMajorLabel.text = newValue?.major?.description(withLocale: nil)
-            beaconMinorLabel.text = newValue?.minor?.description(withLocale: nil)
+            var region = newValue?.defaultRegion()
+            beaconUUIDLabel.text = region?.proximityUUID.description
+            beaconMajorLabel.text = region?.major?.description(withLocale: nil)
+            beaconMinorLabel.text = region?.minor?.description(withLocale: nil)
+            beaconActivityLog.text = newValue?.activityLog
         }
     }
 

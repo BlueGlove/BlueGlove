@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         clientView.QRImage = UIImage(named: "QR_Image_20161110_black")
-        clientView.mainBeacon = BluBeaconManager.sharedRegions[0]
+        clientView.beaconManager = BluBeaconManager.sharedManager
         
         let bluClient = BluClient()
         bluClient.addVisit()

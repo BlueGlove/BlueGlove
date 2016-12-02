@@ -19,10 +19,40 @@ class BluBeaconManager: ESTBeaconManager {
         ,BluBeaconInfo(proximityUUID: UUID(uuidString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")!, major: 0, minor: 0, identifier: "mint" )
     ]
     
-    var activityLog: String!
+    var activityLog: String
+    
+    override init(){
+        self.activityLog = ""
+        
+        super.init()
+        
+        
+    }
+    
+    func defaultRegion() -> BluBeaconInfo {
+        return BluBeaconManager.sharedRegions[0]
+    }
     
     func addActivityLog(string: String){
-        activityLog.appending( string )
+        activityLog = activityLog + string
     }
 
+    func monitorAll(){
+        for aRegion in BluBeaconManager.sharedRegions {
+            startMonitoring(for:
+                aRegion)
+            let aLog = "\nMonitor Region: " + aRegion.identifier
+            activityLog +=  aLog
+            print(aLog)
+        }
+    }
+    
+    func unMonitorAll(){
+        for aRegion in BluBeaconManager.sharedRegions{
+            stopMonitoring(for: aRegion)
+            let aLog = "\nUnmonitor: " + aRegion.identifier
+            activityLog +=  aLog
+            print(aLog)
+        }
+    }
 }

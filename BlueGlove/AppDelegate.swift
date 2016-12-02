@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
         , major: 2016
         , minor: 1
         , identifier: "ice") */
-    let beaconRegions:[BluBeaconInfo] = BluBeaconManager.sharedRegions
+
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -34,11 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
         //Request generate notification
         UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: .alert, categories: nil) )
         
-        for aRegion in beaconRegions {
-            self.beaconManager.startMonitoring(for:
-            aRegion)
-            print("Monitor Region: " + aRegion.identifier)
-        }
+        self.beaconManager.monitorAll()
      
         
         return true
@@ -59,8 +55,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
         UIApplication.shared.presentLocalNotificationNow(notification)
         
         //Add it to the GUI
-        var aBeaconManager = BluBeaconManager.sharedManager
-        aBeaconManager.addActivityLog(string: "Detected: " + region.identifier)
+        let aBeaconManager = BluBeaconManager.sharedManager
+        aBeaconManager.addActivityLog(string: "\nDetected: " + region.identifier)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -85,10 +81,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         
         //Stop monitoring
-        for aRegion in beaconRegions{
-            beaconManager.stopMonitoring(for: aRegion)
-            print("Unmonitor: " + aRegion.identifier)
-        }
+        beaconManager.unMonitorAll()
         
         
     }
