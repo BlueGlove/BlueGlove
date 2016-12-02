@@ -19,7 +19,9 @@ class BluBeaconInfo:CLBeaconRegion {
     init( uuidString, )
     */
     
-    static let sharedInstance = BluBeaconInfo(proximityUUID: UUID(uuidString: "8228DD1A-D9C4-4E98-96CC-559A4EF91AFD")!, major: 2016, minor: 1, identifier: "ice")
+
+    
+
     
     
 }

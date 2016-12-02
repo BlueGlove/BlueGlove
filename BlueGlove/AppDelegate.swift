@@ -15,13 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
 
     //Estimote: Add a property to hold the beacon manager and instantiate it
     //let beaconManager = ESTBeaconManager()
-    let beaconManager = BluBeaconManager()
+    let beaconManager = BluBeaconManager.sharedManager
     /*let beaconRegion01 = BluBeaconInfo( proximityUUID:
         UUID(uuidString: "8228DD1A-D9C4-4E98-96CC-559A4EF91AFD")!
         , major: 2016
         , minor: 1
         , identifier: "ice") */
-    let beaconRegion01 = BluBeaconInfo.sharedInstance
+    let beaconRegions:[BluBeaconInfo] = BluBeaconManager.sharedRegions
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -34,11 +34,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
         //Request generate notification
         UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: .alert, categories: nil) )
         
-
-       self.beaconManager.startMonitoring(for:
-            beaconRegion01
-        )
-        
+        for aRegion in beaconRegions {
+            self.beaconManager.startMonitoring(for:
+            aRegion)
+            print("Monitor Region: " + aRegion.identifier)
+        }
      
         
         return true
@@ -47,6 +47,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
 
     
     func beaconManager(_ manager: Any, didEnter region: CLBeaconRegion) {
+        
+        //Pop-up notification
         let notification = UILocalNotification()
             notification.alertBody =
             "Your gate closes in 47 minutes. " +
@@ -56,6 +58,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
 
         UIApplication.shared.presentLocalNotificationNow(notification)
         
+        //Add it to the GUI
+        var aBeaconManager = BluBeaconManager.sharedManager
+        aBeaconManager.addActivityLog(string: "Detected: " + region.identifier)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -79,7 +84,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         
-        beaconManager.stopMonitoring(for: beaconRegion01)
+        //Stop monitoring
+        for aRegion in beaconRegions{
+            beaconManager.stopMonitoring(for: aRegion)
+            print("Unmonitor: " + aRegion.identifier)
+        }
+        
         
     }
 

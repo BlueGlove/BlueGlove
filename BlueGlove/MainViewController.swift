@@ -17,10 +17,12 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         clientView.QRImage = UIImage(named: "QR_Image_20161110_black")
-        clientView.mainBeacon = BluBeaconInfo.sharedInstance
+        clientView.mainBeacon = BluBeaconManager.sharedRegions[0]
         
         let bluClient = BluClient()
         bluClient.addVisit()
+
+        clientView.beaconActivityLog.text.append("\nnew activity")
     }
 
     override func didReceiveMemoryWarning() {

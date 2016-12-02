@@ -17,6 +17,8 @@ class ClientMainView: UIView {
     @IBOutlet weak var beaconMajorLabel: UILabel!
     @IBOutlet weak var beaconMinorLabel: UILabel!
     
+    @IBOutlet weak var beaconActivityLog: UITextView!
+    
     
     var QRImage: UIImage? {
             get { return QRImageView.image }
