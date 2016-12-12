@@ -34,25 +34,26 @@ class BluBeaconManager: ESTBeaconManager {
     }
     
     func addActivityLog(string: String){
-        activityLog = activityLog + string
+        
+        activityLog = activityLog + "\n[" + BluHelperTime.shared.Timestamp + "]: " + string
     }
 
     func monitorAll(){
         for aRegion in BluBeaconManager.sharedRegions {
             startMonitoring(for:
                 aRegion)
-            let aLog = "\nMonitor Region: " + aRegion.identifier
-            activityLog +=  aLog
+            let aLog = "Monitor: " + aRegion.identifier
             print(aLog)
+            addActivityLog(string: aLog)
         }
     }
     
     func unMonitorAll(){
         for aRegion in BluBeaconManager.sharedRegions{
             stopMonitoring(for: aRegion)
-            let aLog = "\nUnmonitor: " + aRegion.identifier
-            activityLog +=  aLog
+            let aLog = "UnMonitor: " + aRegion.identifier
             print(aLog)
+            addActivityLog(string: aLog)
         }
     }
 }

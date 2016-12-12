@@ -10,6 +10,7 @@
 		2907E4D61DE6925E00ABD57D /* BluBeaconInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2907E4D51DE6925E00ABD57D /* BluBeaconInfo.swift */; };
 		2907E4D81DE694AE00ABD57D /* BluBeaconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2907E4D71DE694AE00ABD57D /* BluBeaconManager.swift */; };
 		2907E4DA1DE6A17300ABD57D /* BluClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2907E4D91DE6A17300ABD57D /* BluClient.swift */; };
+		29B2DE7B1DF6C2D300383F32 /* BluHelperTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B2DE7A1DF6C2D300383F32 /* BluHelperTime.swift */; };
 		29D1C24C1DDC2E0900C0D7C9 /* ClientMainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29D1C24B1DDC2E0900C0D7C9 /* ClientMainView.xib */; };
 		29D1C2511DDC333E00C0D7C9 /* ClientMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D1C2501DDC333E00C0D7C9 /* ClientMainView.swift */; };
 		29EE6F561DD42A2300231D46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EE6F551DD42A2300231D46 /* AppDelegate.swift */; };
@@ -25,6 +26,7 @@
 		2907E4D71DE694AE00ABD57D /* BluBeaconManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluBeaconManager.swift; sourceTree = "<group>"; };
 		2907E4D91DE6A17300ABD57D /* BluClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluClient.swift; sourceTree = "<group>"; };
 		293913991DDEC96200039C6B /* ObjCBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjCBridge.h; sourceTree = "<group>"; };
+		29B2DE7A1DF6C2D300383F32 /* BluHelperTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluHelperTime.swift; sourceTree = "<group>"; };
 		29D1C24B1DDC2E0900C0D7C9 /* ClientMainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClientMainView.xib; sourceTree = "<group>"; };
 		29D1C2501DDC333E00C0D7C9 /* ClientMainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientMainView.swift; sourceTree = "<group>"; };
 		29EE6F521DD42A2300231D46 /* BlueGlove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlueGlove.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +67,7 @@
 			children = (
 				2907E4D51DE6925E00ABD57D /* BluBeaconInfo.swift */,
 				2907E4D71DE694AE00ABD57D /* BluBeaconManager.swift */,
+				29B2DE7A1DF6C2D300383F32 /* BluHelperTime.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				2907E4D81DE694AE00ABD57D /* BluBeaconManager.swift in Sources */,
 				29D1C2511DDC333E00C0D7C9 /* ClientMainView.swift in Sources */,
 				2907E4DA1DE6A17300ABD57D /* BluClient.swift in Sources */,
+				29B2DE7B1DF6C2D300383F32 /* BluHelperTime.swift in Sources */,
 				29EE6F561DD42A2300231D46 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

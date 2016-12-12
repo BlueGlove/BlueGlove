@@ -34,6 +34,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
         //Request generate notification
         UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: .alert, categories: nil) )
         
+        //Unmonitor
+        self.beaconManager.unMonitorAll()
+        
+        //Re-monitor
         self.beaconManager.monitorAll()
      
         
@@ -54,9 +58,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
 
         UIApplication.shared.presentLocalNotificationNow(notification)
         
-        //Add it to the GUI
+        //Add it to the Class log
         let aBeaconManager = BluBeaconManager.sharedManager
-        aBeaconManager.addActivityLog(string: "\nDetected: " + region.identifier)
+        aBeaconManager.addActivityLog(string: "Detected: " + region.identifier)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -82,7 +86,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ESTBeaconManagerDelegate 
         
         //Stop monitoring
         beaconManager.unMonitorAll()
-        
         
     }
 
